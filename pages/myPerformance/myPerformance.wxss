@@ -1,0 +1,69 @@
+/* pages/myPerformance/myPerformance.wxss */
+page {
+  width: 100%;
+  height: 100%;
+}
+scroll-view{
+  margin-top:88px;
+  box-sizing: border-box;
+}
+.selectContainer{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background:#0bb20c;
+  position:fixed;
+  top:0;
+  z-index:999;
+}
+.selectContainer>view{
+  width:50%;
+  box-sizing: border-box;
+  text-align:center;
+  font-size:13px;
+  color:#fff;
+  height:30px;
+  line-height:30px;
+  margin:7px 0;
+}
+.selectContainer>view:last-child .weui-select{
+  border-right:0;
+}
+.weui-select:before{
+  -webkit-transform:matrix(-0.707107,0.707107,-0.707107,-0.707107,0,0);
+  transform:matrix(-0.707107,0.707107,-0.707107,-0.707107,0,0);
+}
+.totalContainer{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background:#fff;
+  font-size:13px;
+  color:#333;
+  height:44px;
+  line-height:44px;
+  box-sizing: border-box;
+  padding:0 15px;
+  position:fixed;
+  top:44px;
+  z-index:999;
+}
+.weui-cell{
+  justify-content: space-between;
+}
+.weui-cell>.rt{
+  text-align:right;
+}
+.weui-cell>view>text{
+  font-size:34rpx;
+  color:#000;
+}
+.weui-cell>view>view{
+  font-size:26rpx;
+  color:#a9a9a9;
+  margin-top:20rpx;
+}

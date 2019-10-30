@@ -1,0 +1,102 @@
+<!--pages/insuranceDetails/insuranceDetails.wxml-->
+<view class="page">
+    <view class="topContainer" hidden='{{hideTotalCost}}' animation="{{animation}}">
+        <view class="hint">以下报价由<text>{{offerInstitution}}</text>为您提供</view>
+        <view class="totalCost">
+            <view class="costItem">
+                <text>商业险</text>
+                <view><text>￥</text>{{commercialInsurance}}</view>
+            </view>
+            <view class="sign">+</view>
+            <view class="costItem">
+                <text>交强险</text>
+                <view><text>￥</text>{{compulsoryInsurance}}</view>
+            </view>
+            <view class="sign">+</view> 
+            <view class="costItem">
+                <text>车船税</text>
+                <view><text>￥</text>{{vehicleVesselTax}}</view>
+            </view>
+            <view class="sign">=</view> 
+            <view class="costItem">
+                <text>缴费合计</text>
+                <view><text>￥</text>{{totalCost}}</view>
+            </view>
+        </view>
+    </view>
+    <scroll-view class="{{hideTotalCost?'mainContainer scrollStyle':'mainContainer'}}" id="affix" bindscroll="scroll" scroll-y>
+      <view class="weui-panel">
+          <view class="weui-panel__hd">
+              <view class="weui-cell weui-cell_switch">
+                  <view class="weui-cell__bd">商业险</view>
+                  <view class="weui-cell__ft">
+                      <switch  checked="{{commercialInsuranceSwitch}}" bindchange="switchCommercialChange" />
+                  </view>
+              </view>
+          </view>
+          <view class="weui-panel__bd" hidden="{{!commercialInsuranceSwitch}}">
+              <view class="weui-media-box weui-media-box_text">
+                  <view class="weui-media-box__title weui-media-box__title_in-text">生效日期 {{commercialInsuranceEffectiveDate}}</view>
+                  <view class="weui-media-box__desc">
+                      <view class="title">
+                        <view>险种</view>
+                        <view>保额</view>
+                        <view>保费（元）</view>
+                      </view>
+                      <view class="content">
+                          <view class="detailItem" wx:for="{{commercialInsuranceList}}" wx:key="{{item.insuranceIdx}}">
+                              <view>{{item.insuranceName}}</view>
+                              <view class="weui-cell__hd">
+                                  <picker bindchange="bindCoverageChange" value="{{item.selectedCoverageIdx}}" range="{{item.insuranceCoverageList}}" range-key="insuranceCoverageName" data-id="1" data-idx="{{index}}">
+                                      <view class="weui-select">{{item.insuranceCoverageList[item.selectedCoverageIdx]["insuranceCoverageName"]}}</view>
+                                  </picker>
+                              </view>
+                              <view>{{item.insuranceCoverageList[item.selectedCoverageIdx].insuranceCoveragePremium}}</view>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </view>
+      <view class="weui-panel">
+          <view class="weui-panel__hd">
+              <view class="weui-cell weui-cell_switch">
+                  <view class="weui-cell__bd">强制险</view>
+                  <view class="weui-cell__ft">
+                      <switch  checked="{{compulsoryInsuranceSwitch}}" bindchange="switchCompulsoryChange" />
+                  </view>
+              </view>
+          </view>
+          <view class="weui-panel__bd" hidden="{{!compulsoryInsuranceSwitch}}">
+              <view class="weui-media-box weui-media-box_text">
+                  <view class="weui-media-box__title weui-media-box__title_in-text">生效日期 {{compulsoryInsuranceEffectiveDate}}</view>
+                  <view class="weui-media-box__desc">
+                      <view class="title">
+                        <view>险种</view>
+                        <view>保额</view>
+                        <view>保费（元）</view>
+                      </view>
+                      <view class="content">
+                          <view class="detailItem" wx:for="{{compulsoryInsuranceList}}" wx:key="{{item.insuranceIdx}}">
+                              <view>{{item.insuranceName}}</view>
+                              <view class="weui-cell__hd">
+                                  <picker bindchange="bindCoverageChange" value="{{item.selectedCoverageIdx}}" range="{{item.insuranceCoverageList}}" range-key="insuranceCoverageName" data-id="2" data-idx="{{index}}">
+                                      <view class="weui-select">{{item.insuranceCoverageList[item.selectedCoverageIdx]["insuranceCoverageName"]}}</view>
+                                  </picker>
+                              </view>
+                              <view>{{item.insuranceCoverageList[item.selectedCoverageIdx].insuranceCoveragePremium}}</view>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </view>
+    </scroll-view>
+    <view class="bottomContainer">
+      <view class="normalStatus" wx:if="{{normalStatus}}">
+          <view>共计:{{totalCost}}</view>
+          <view class="nextBtn" bindtap='nextBtn'>下一步</view>
+      </view>
+      <button wx:elif="{{!normalStatus}}" class="weui-btn" type="primary" bindtap='requote'>重新报价</button>  
+    </view>
+</view>

@@ -1,0 +1,33 @@
+/* pages/policyholderInfo/policyholderInfo.wxss */
+.page{
+  padding-top:30rpx;
+}
+.weui-cells__title{
+  background:#fff;
+  color:#333;
+  height:80rpx;
+  line-height:80rpx;
+  font-size:34rpx;
+  margin-top:0;
+  margin-bottom:0;
+  position:relative;
+}
+.weui-cells__title>text{
+  position:absolute;
+  color:#1bbc60;
+  left:5px;
+  font-size:20rpx;
+}
+.weui-cells:before,.weui-cells:after{
+  left:15px;
+}
+.copyItem{
+  height:108rpx;
+  line-height:108rpx;
+}
+.copyItem>button{
+  float:right;
+}
+.insuredInfor>.weui-cells:after{
+  border-bottom:0;
+}

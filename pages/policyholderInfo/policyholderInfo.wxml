@@ -1,0 +1,67 @@
+<!--pages/policyholderInfo/policyholderInfo.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="policyholderInfo">
+        <view class="weui-cells__title"><text>●</text> 投保人</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">姓名</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入投保人姓名" maxlength='6' value="{{policyHolderInfor.name}}" bindinput='policyHolderNameChange' bindblur='policyHolderNameBlur'/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">身份证</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="idcard" placeholder="请输入投保人身份证号码" maxlength='18' value="{{policyHolderInfor.identityCard}}" bindinput='policyHolderIDCardChange' bindblur='policyHolderIDCardBlur'/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">手机号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="number" placeholder="请输入手机号" maxlength="11" value="{{policyHolderInfor.phoneNumber}}" bindinput='policyHolderPhoneNumberChange' bindblur='policyHolderPhoneNumberBlur'/>
+                </view>
+            </view>
+        </view>               
+    </view>
+    <view class="insuredInfor">
+        <view class="weui-cells__title copyItem">
+            <text>●</text> 被保险人
+            <button class="weui-btn mini-btn" type="primary" size="mini" bindtap="copyPolicyHolderInfor">复制投保人信息</button>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">姓名</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入被保险人姓名" maxlength='6' value="{{insuredPersonInfor.name}}" bindinput='insuredPersonNameChange' bindblur='insuredPersonNameBlur'/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">身份证</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="idcard" placeholder="请输入被保险人身份证号码" maxlength='18' value="{{insuredPersonInfor.identityCard}}" bindinput='insuredPersonIDCardChange' bindblur='insuredPersonIDCardBlur'/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">手机号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type="number" placeholder="请输入手机号" maxlength="11" value='{{insuredPersonInfor.phoneNumber}}' bindinput='insuredPersonPhoneNumberChange' bindblur='insuredPersonPhoneNumberBlur'/>
+                </view>
+            </view>
+        </view>               
+    </view>
+    <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap="showTopTips">下一步</button>
+    </view>    
+</view>

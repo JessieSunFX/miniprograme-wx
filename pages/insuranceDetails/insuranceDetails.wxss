@@ -1,0 +1,138 @@
+/* pages/insuranceDetails/insuranceDetails.wxss */
+page{
+  position:relative;
+  height:100%;
+}
+.topContainer{
+  background:#eee;
+}
+.topContainer>.hint{
+  text-align:center;
+  height:70rpx;
+  line-height:70rpx;
+  background:#fde8e8;
+  font-size:25rpx;
+}
+.topContainer>.hint>text{
+  color:#e22;
+}
+.topContainer>.totalCost{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  background:#fff;
+  height:158rpx;
+  padding-bottom:30rpx;
+  box-sizing: border-box;
+}
+.topContainer>.totalCost>.costItem{
+  text-align:center;
+}
+.topContainer>.totalCost>.costItem>view{
+  color:#e22;
+}
+.weui-panel__hd{
+  padding:0;
+}
+.weui-media-box{
+  padding-top:0;
+  padding-bottom:0;
+}
+.weui-media-box__desc>.title{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom:1rpx solid #d9d9d9;
+}
+.weui-media-box__desc>.title>view{
+  width:33.33%;
+  text-align:center;
+  line-height:2.58823529em;
+  box-sizing:border-box;
+}
+.weui-media-box__desc>.title>view:nth-child(2){
+  padding-right:12px;
+}
+.weui-media-box__desc>.content{
+  padding:20rpx 0;
+}
+.weui-media-box__desc>.content>.detailItem{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.weui-media-box__desc>.content>.detailItem>view{
+  width:33.33%;
+  text-align:center;
+  line-height:2.58823529em;
+  white-space:normal; 
+  word-break:break-all;
+}
+.weui-select{
+  border-right:none;
+  padding-left:0;
+  padding-right:12px;
+  height:auto;
+  min-height:auto;
+}
+.weui-select:before{
+  -webkit-transform:matrix(-0.707107,0.707107,-0.707107,-0.707107,0,0);
+  transform:matrix(-0.707107,0.707107,-0.707107,-0.707107,0,0);
+  right:1px;
+}
+
+
+.mainContainer{
+  position:absolute;
+  top:240rpx;
+  left:0;
+  bottom:130rpx;
+  right:0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.mainContainer.scrollStyle{
+  top:20rpx;
+}
+.weui-panel:before{
+  border-top:0;
+}
+.weui-panel:after{
+  border-bottom:0;
+}
+.weui-panel__hd:after{
+  border-bottom:0;
+}
+.weui-media-box__title{
+  border-top:1rpx solid #e5e5e5;
+  padding-top:30rpx;
+  font-size:28rpx;
+}
+.bottomContainer{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  box-sizing: border-box;
+}
+.bottomContainer>.normalStatus{
+  padding-left:30rpx;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background:#fff;
+  height:88rpx;
+  line-height:88rpx;
+}
+.bottomContainer .nextBtn{
+  background:#0bb20c;
+  color:#fff;
+  padding:0 30rpx;
+}
+.bottomContainer>button{
+  margin:30rpx;
+  height:80rpx;
+  line-height:80rpx;
+}

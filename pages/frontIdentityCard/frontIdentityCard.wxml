@@ -1,0 +1,62 @@
+<!--pages/frontIdentityCard/frontIdentityCard.wxml-->
+<view class="page">
+    <!-- <view class="weui-cells__title">toubaoren</view> -->
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">姓名</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="姓名" maxlength="6" value="{{name}}" bindinput='nameChange' bindblur='nameBlur'/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">性别</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker bindchange="bindGenderChange" value="{{gender}}" range="{{genderList}}">
+                    <view class="weui-select weui-select_in-select-after">{{genderList[gender]}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">民族</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="民族" maxlength='5' value="{{nation}}" bindinput='nationChange' bindblur='nationBlur'/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">出生日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{birthDate}}"  bindchange="bindDateChange">
+                    <view class="{{birthDate?'weui-input':'weui-input datePickerPlaceholder'}}">{{birthDate?birthDate:'出生日期'}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">地址</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="地址" maxlength='20' value="{{address}}" bindinput='addressChange' bindblur='addressBlur'/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">身份证</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" type="idcard" placeholder="身份证" maxlength='18' value="{{identityCard}}" bindinput='identityCardChange' bindblur='identityCardBlur'/>
+            </view>
+        </view>
+        
+    </view>
+    <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap="showTopTips">下一步</button>
+    </view>            
+</view>

@@ -1,0 +1,63 @@
+<!--pages/vehicleInfoSupplement/vehicleInfoSupplement.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="topBox">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">车牌号码</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="车牌号码"  value="{{licenseNumber}}" disabled/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">品牌型号</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="品牌型号"  value="{{brandModel}}" disabled/>
+            </view>
+        </view>
+      </view>
+      <text>补全品牌型号详细信息</text>
+      <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="按关键字搜索" value="{{searchKeyword}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{searchKeyword.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">按关键字搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+    </view>
+    
+    <view class="page__bd">
+        <view class="weui-cells searchbar-result" style='top:{{topDistance}}px;'>
+            <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+                <radio-group bindchange="radioChange">
+                  <label class="weui-cell weui-check__label" wx:for="{{searchList}}" wx:key="{{item.vehicleSummaryId}}">
+
+                    <view class="weui-cell__hd">
+                      <radio value="{{item.vehicleSummaryId}}" checked="{{item.checked}}"/>
+                    </view>
+                    <view class="weui-cell__bd" style="word-break: break-all;">{{item.vehicleSummaryContent}}</view>
+                  </label>
+                </radio-group>
+                <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+                <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view> 
+            </scroll-view>   
+        </view>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="tapNextBtn">下一步</button>
+        </view>  
+    </view>
+    
+     
+</view>

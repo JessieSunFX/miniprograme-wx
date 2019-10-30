@@ -1,0 +1,48 @@
+/* pages/vehicleInfoSupplement/vehicleInfoSupplement.wxss */
+page{
+  height: 100%;
+  position:relative;
+  background:#efeff4;
+}
+.searchbar-result{
+    position:absolute;
+    left:0;
+    top:380rpx;
+    right:0;
+    bottom:200rpx;  
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.searchbar-result>.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+.topBox>text{
+  display:block;
+  text-align:center;
+  background:#efeff4;
+  padding-top:20rpx;
+}
+.weui-search-bar {
+  border-top:none;
+  border-bottom:none;
+}
+.searchbar-result>scroll-view{
+  position:absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;  
+  overflow-y:auto;
+  overflow-x:hidden; 
+}
+.weui-btn-area{
+  position:absolute;
+  bottom:30rpx;
+  left:0;
+  right:0;
+}
+
+

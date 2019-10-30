@@ -1,0 +1,27 @@
+/* pages/aboutUs/aboutUs.wxss */
+page{
+  background:#fff;
+}
+.content{
+  color:#333;
+}
+.content>image{
+  width:200rpx;
+  height:200rpx;
+  margin:160rpx auto 0;
+  display:block;
+}
+.content>.logo{
+  font-size:40rpx;
+  height:40rpx;
+  line-height:40rpx;
+  margin-top:30rpx;
+  text-align:center;
+}
+.content>.information{
+  font-size:26rpx;
+  color:#333;
+  line-height:40rpx;
+  margin-top:70rpx;
+  text-align:center;
+}

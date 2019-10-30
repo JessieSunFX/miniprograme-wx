@@ -1,0 +1,4 @@
+/* pages/frontDrivingLicenceInfo/frontDrivingLicenceInfo.wxss */
+.datePickerPlaceholder{
+  color:#808080;
+}

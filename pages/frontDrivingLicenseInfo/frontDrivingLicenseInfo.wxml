@@ -1,0 +1,67 @@
+<!--pages/frontDrivingLicenceInfo/frontDrivingLicenceInfo.wxml-->
+<view class="page">
+    <!-- <view class="weui-cells__title">toubaoren</view> -->
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">车牌号码</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="车牌号码" maxlength="7" value="{{licenseNumber}}" bindinput='licenseNumberChange' bindblur='licenseNumberBlur'/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">车辆类型</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="车辆类型" value="{{vehicleType}}" bindinput='vehicleTypeChange' bindblur='vehicleTypeBlur'/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">所有人</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="所有人" maxlength='6' value="{{carOwner}}" bindinput='carOwnerChange' bindblur='carOwnerBlur'/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">品牌型号</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="品牌型号" value="{{brandModel}}" bindinput='brandModelChange' bindblur='brandModelBlur'/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">识别代码</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="识别代码" maxlength='20' value="{{identificationCode}}" bindinput='identificationCodeChange' bindblur='identificationCodeBlur'/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">发动机号</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="发动机号" maxlength='16' value="{{engineNumber}}" bindinput='engineNumberChange' bindblur='engineNumberBlur'/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">注册日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{registerDate}}"  bindchange="bindDateChange">
+                    <view class="{{registerDate?'weui-input':'weui-input datePickerPlaceholder'}}">{{registerDate?registerDate:'注册日期'}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap="showTopTips">下一步</button>
+    </view>            
+</view>

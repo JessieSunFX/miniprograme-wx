@@ -1,0 +1,62 @@
+/**index.wxss**/
+.topBox{
+  width:100%;
+  height:320rpx; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position:relative;
+}
+.topBox>image{
+  width:100%;
+  height:320rpx;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+.topBox>text{
+  display:block;
+  color:#fff;
+  font-size:50rpx;
+  margin-left:30rpx;
+  margin-top:30rpx;
+  font-weight:bold;
+}
+.userinfo {
+  margin-top:30rpx;
+  margin-right:30rpx;
+}
+
+.userinfo-avatar {
+  width: 44rpx;
+  height:48rpx;
+}
+
+.mainBox{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin:0 30rpx;
+}
+.mainBox>view{
+  margin-top:30rpx;
+  width:330rpx;
+  background:#fff;
+  border-radius:10rpx;
+  box-shadow:0 0 30rpx rgba(27,188,96,0.2);
+  text-align:center;
+  box-sizing: border-box;
+  padding-bottom:40rpx;
+}
+.mainBox>view>image{
+  display:block;
+  width:220rpx;
+  height:220rpx;
+  margin:18rpx auto 0;
+}
+.mainBox>view>text{
+  font-size:34rpx;
+  color:#333;
+}

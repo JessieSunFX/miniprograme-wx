@@ -1,0 +1,190 @@
+<!--pages/confirmPolicyInfor/confirmPolicyInfor.wxml-->
+<view class="page">
+    <view class="mainContainer">
+      <view class="weui-panel">
+          <view class="weui-panel__hd">
+              <view class="weui-cell weui-cell_switch">
+                  <view class="weui-cell__bd">车辆信息</view>
+                  <view class="weui-cell__ft">
+                      <switch  checked="{{vehicleInforSwitch}}" bindchange="switchVehicleInforChange" />
+                  </view>
+              </view>
+          </view>
+          <view class="weui-panel__bd" hidden="{{!vehicleInforSwitch}}">
+              <view class="weui-media-box weui-media-box_text">
+                  <view class="weui-media-box__title weui-media-box__title_in-text"></view>
+                  <view class="weui-media-box__desc"> 
+                      <view class="content">
+                          <view class="detailItem detailItem2">
+                              <view class="lf">车辆号码</view>
+                              <view class="rt"> {{vehicleInforDetail.vehicleNumber}}</view>
+                          </view>
+                           <view class="detailItem detailItem2">
+                              <view class="lf">所有人</view>
+                              <view class="rt"> {{vehicleInforDetail.vehicleOwner}}</view>
+                          </view>
+                          <view class="detailItem detailItem2">
+                              <view class="lf">车辆类型</view>
+                              <view class="rt"> {{vehicleInforDetail.vehicleType}}</view>
+                          </view>
+                          <view class="detailItem detailItem2">
+                              <view class="lf">座位数</view>
+                              <view class="rt"> {{vehicleInforDetail.vehicleSeats}}</view>
+                          </view>
+                          <view class="detailItem detailItem2">
+                              <view class="lf">识别代码</view>
+                              <view class="rt"> {{vehicleInforDetail.identityCode}}</view>
+                          </view>
+                          <view class="detailItem detailItem2">
+                              <view class="lf">发动机号</view>
+                              <view class="rt"> {{vehicleInforDetail.engineNumber}}</view>
+                          </view>
+                          <view class="detailItem detailItem2">
+                              <view class="lf">注册日期</view>
+                              <view class="rt"> {{vehicleInforDetail.registerDate}}</view>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </view>
+      <view class="weui-panel">
+          <view class="weui-panel__hd">
+              <view class="weui-cell weui-cell_switch">
+                  <view class="weui-cell__bd">商业险</view>
+                  <view class="weui-cell__ft">
+                      <switch  checked="{{commercialInsuranceSwitch}}" bindchange="switchCommercialChange" />
+                  </view>
+              </view>
+          </view>
+          <view class="weui-panel__bd" hidden="{{!commercialInsuranceSwitch}}">
+              <view class="weui-media-box weui-media-box_text">
+                  <view class="weui-media-box__title weui-media-box__title_in-text weui-media-box__title1">生效日期 {{commercialInsuranceDetail.effectiveDate}}</view>
+                  <view class="weui-media-box__desc">
+                      <view class="title">
+                        <view>险种</view>
+                        <view>保额</view>
+                        <view>保费（元）</view>
+                      </view>
+                      <view class="content">
+                          <view class="detailItem"  wx:for="{{commercialInsuranceDetail.insuranceTypeList}}" wx:key="{{item.insuranceIdx}}">
+                              <view>{{item.insuranceName}}</view>
+                              <view > {{item.insuranceCoverageName}}</view>
+                              <view>{{item.premium}}</view>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </view>
+      <view class="weui-panel">
+          <view class="weui-panel__hd">
+              <view class="weui-cell weui-cell_switch">
+                  <view class="weui-cell__bd">车主信息</view>
+                  <view class="weui-cell__ft">
+                      <switch  checked="{{carOwnerInforSwitch}}" bindchange="switchCarOwnerInforChange" />
+                  </view>
+              </view>
+          </view>
+          <view class="weui-panel__bd" hidden="{{!carOwnerInforSwitch}}">
+              <view class="weui-media-box weui-media-box_text">
+                  <view class="weui-media-box__title weui-media-box__title_in-text"></view>
+                  <view class="weui-media-box__desc"> 
+                      <view class="content">
+                          <view class="detailItem detailItem2">
+                              <view class="lf">姓名</view>
+                              <view class="rt"> {{carOwnerInforDetail.name}}</view>
+                          </view>
+                           <view class="detailItem detailItem2">
+                              <view class="lf">身份证</view>
+                              <view class="rt"> {{carOwnerInforDetail.identityCard}}</view>
+                          </view>
+                          <view class="detailItem detailItem2">
+                              <view class="lf">手机号</view>
+                              <view class="rt"> {{carOwnerInforDetail.phoneNumber}}</view>
+                          </view>
+                          <view class="detailItem detailItem2">
+                              <view class="lf">身份证起始日期</view>
+                              <view class="rt"> {{carOwnerInforDetail.identityCardStartDate}}</view>
+                          </view>
+                          <view class="detailItem detailItem2">
+                              <view class="lf">身份证终止日期</view>
+                              <view class="rt"> {{carOwnerInforDetail.identityCardEndDate}}</view>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </view>
+      <view class="weui-panel">
+          <view class="weui-panel__hd">
+              <view class="weui-cell weui-cell_switch">
+                  <view class="weui-cell__bd">投保人</view>
+                  <view class="weui-cell__ft">
+                      <switch  checked="{{policyHolderSwitch}}" bindchange="switchPolicyHolderChange" />
+                  </view>
+              </view>
+          </view>
+          <view class="weui-panel__bd" hidden="{{!policyHolderSwitch}}">
+              <view class="weui-media-box weui-media-box_text">
+                  <view class="weui-media-box__title weui-media-box__title_in-text"></view>
+                  <view class="weui-media-box__desc"> 
+                      <view class="content">
+                          <view class="detailItem detailItem2">
+                              <view class="lf">姓名</view>
+                              <view class="rt"> {{policyHolderDetail.name}}</view>
+                          </view>
+                           <view class="detailItem detailItem2">
+                              <view class="lf">身份证</view>
+                              <view class="rt"> {{policyHolderDetail.identityCard}}</view>
+                          </view>
+                          <view class="detailItem detailItem2">
+                              <view class="lf">手机号</view>
+                              <view class="rt"> {{policyHolderDetail.phoneNumber}}</view>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </view>
+      <view class="weui-panel">
+          <view class="weui-panel__hd">
+              <view class="weui-cell weui-cell_switch">
+                  <view class="weui-cell__bd">被投保人</view>
+                  <view class="weui-cell__ft">
+                      <switch  checked="{{insuredPersonSwitch}}" bindchange="switchInsuredPersonChange" />
+                  </view>
+              </view>
+          </view>
+          <view class="weui-panel__bd" hidden="{{!insuredPersonSwitch}}">
+              <view class="weui-media-box weui-media-box_text">
+                  <view class="weui-media-box__title weui-media-box__title_in-text"></view>
+                  <view class="weui-media-box__desc"> 
+                      <view class="content">
+                          <view class="detailItem detailItem2">
+                              <view class="lf">姓名</view>
+                              <view class="rt"> {{insuredPersonDetail.name}}</view>
+                          </view>
+                           <view class="detailItem detailItem2">
+                              <view class="lf">身份证</view>
+                              <view class="rt"> {{insuredPersonDetail.identityCard}}</view>
+                          </view>
+                          <view class="detailItem detailItem2">
+                              <view class="lf">手机号</view>
+                              <view class="rt"> {{insuredPersonDetail.phoneNumber}}</view>
+                          </view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </view>
+    </view>
+     
+    
+    <view class="bottomContainer">
+      <view class="normalStatus" >
+          <view>共计:{{totalCost}}</view>
+          <view class="nextBtn">下一步</view>
+      </view>
+    </view>
+</view>

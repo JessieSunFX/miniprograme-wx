@@ -1,0 +1,59 @@
+<!--pages/diamondExchange/diamondExchange.wxml-->
+<view class="page">
+    <view class="topHint {{topHintHide?'topHintHide':''}}">
+      <view class="marquee_box">
+        <view class="marquee_text" style="{{orientation}}:{{marqueeDistance}}px;">
+         {{diamondWithdrawal}}钻提现中，预计{{estimatedTime}}打款(到账时间以银行为准)
+        </view>
+      </view>
+    </view>
+    <view class="topInfo">
+        <image src="../../img/exchangeBg.png" background-size="cover"></image>
+        <view><text>{{diamondBalance}}</text>钻</view>
+        <text>可兑换余额</text>
+    </view>
+    <view class="mainBox">
+      <text>输入需要兑换的钻(100钻可兑换1元)</text>
+      <view class="section">
+        <input placeholder="需输入100的整数倍数"  type="number" value='{{inputNum}}' bindinput='bindInputFun'/>
+      </view>
+    </view>
+    <view class="bottomBox">
+        <button class="weui-btn" type="primary" bindtap='immediateExchange'>立即兑换</button>
+        <view>
+            <view>·兑换钻第二个工作日打款</view>
+            <view>·每月5日以后即可兑换本月1日之前所有累计的钻</view>
+        </view>
+    </view>
+    <view class="confirmInfoModal" wx:if="{{showConfirmModal}}">
+        <view>
+            <view class="modalTitle">请确认兑换信息</view>
+            <view class="modalContent">
+                <view class="contentItem">
+                    <text>兑换数量：</text>
+                    <view>{{inputNum}}钻</view>
+                </view>
+                 <view class="contentItem">
+                    <text>金额：</text>
+                    <view>{{inputNum/100}}元</view>
+                </view>
+                 <view class="contentItem">
+                    <text>收款人：</text>
+                    <view>{{payeeName}}</view>
+                </view>
+                 <view class="contentItem">
+                    <text>银行：</text>
+                    <view>{{depositBank}}</view>
+                </view>
+                 <view class="contentItem">
+                    <text>卡号：</text>
+                    <view>{{bankCardNumber}}</view>
+                </view>
+            </view>            
+            <view class="modalBottom">
+                <view class="clearBtn" bindtap='clearConfirmModal'>取消</view> 
+                <view class="confirmBtn" bindtap='confirmInfor'>确认</view>               
+            </view>       
+        </view>
+    </view>
+</view>

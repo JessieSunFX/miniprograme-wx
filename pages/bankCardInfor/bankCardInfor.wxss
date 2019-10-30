@@ -1,0 +1,12 @@
+/* pages/bankCardInfor/bankCardInfor.wxss */
+.bottomHint{
+  font-size:26rpx;
+  color:#333;
+  line-height:40rpx;
+  padding:0 30rpx;
+  margin-top:70rpx;
+}
+.bottomHint>text{
+  display:block;
+  word-break: break-all;
+}

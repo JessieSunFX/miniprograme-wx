@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/diamondExchange/diamondExchange",  
+    "pages/confirmPolicyInfor/confirmPolicyInfor",
+    "pages/vehicleInfoSupplement/vehicleInfoSupplement",  
+    "pages/insuranceDetails/insuranceDetails",
+    "pages/backIdentityCard/backIdentityCard",
+    "pages/frontIdentityCard/frontIdentityCard",
+    "pages/backDrivingLicenseInfo/backDrivingLicenseInfo",
+    "pages/frontDrivingLicenseInfo/frontDrivingLicenseInfo",
+    "pages/takePhoto/takePhoto",
+    "pages/policyholderInfo/policyholderInfo",
+    "pages/personalCenter/personalCenter",
+    "pages/login/login",
+    "pages/myClient/myClient",
+    "pages/personalInfor/personalInfor",
+    "pages/bankCardInfor/bankCardInfor",
+    "pages/faq/faq",
+    "pages/aboutUs/aboutUs",
+    
+    "pages/myDiamond/myDiamond",
+    "pages/myPerformance/myPerformance",
+    "pages/basicVehicleInfo/basicVehicleInfo",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "车险小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "uploadFile": 10000
+  }
+}

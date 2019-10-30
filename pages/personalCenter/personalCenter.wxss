@@ -1,0 +1,55 @@
+.topContainer>.basicInfo{
+  width:100%;
+  height:180rpx;
+  display:flex;
+  align-items: center;
+  background:#fff;
+}
+.topContainer>.basicInfo>image{
+  width:120rpx;
+  height:120rpx;
+  margin-left:30rpx;
+  margin-right:30rpx;
+}
+.topContainer>.propertyInfo{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top:30rpx;
+}
+.topContainer>.propertyInfo>view{
+  width:330rpx;
+  height:220rpx;
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color:#fff;
+  box-sizing: border-box;
+  padding:40rpx 30rpx 30rpx;
+  font-size:28rpx;
+}
+.topContainer>.propertyInfo>view>image{
+  width:330rpx;
+  height:220rpx;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+.topContainer>.propertyInfo>view>.bigText{
+  height:80rpx;
+  line-height:80rpx;
+}
+.topContainer>.propertyInfo>view>.bigText>text{
+  font-size:80rpx;
+}
+.topContainer>.propertyInfo>view>view>.rt{
+  float:right;
+}
+
+.buttonContainer{
+  margin-top:80rpx;
+  padding:0 30rpx;
+}

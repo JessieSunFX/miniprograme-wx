@@ -1,0 +1,37 @@
+<!--pages/myPerformance/myPerformance.wxml-->
+<view class="page" >  
+    <view class="selectContainer">
+      <view class="weui-cell__hd">
+            <picker mode="date" value="{{date}}" bindchange="bindDateChange" fields="month">
+                <view class="picker weui-select">{{date}}</view>
+            </picker>
+        </view>
+        <view class="weui-cell__hd">
+            <picker bindchange="bindInsuranceCompanyChange" value="{{insuranceCompanyIndex==-1?0:insuranceCompanyIndex}}" range="{{insuranceCompanyList}}" range-key='insuranceCompanyName'>
+                <view class="weui-select">{{insuranceCompanyIndex==-1?'筛选':insuranceCompanyList[insuranceCompanyIndex]['insuranceCompanyName']}}</view>
+            </picker>
+        </view>
+    </view>
+    <view class="totalContainer">
+        <view>合计{{totalOrders}}单</view>
+        <view>金额￥{{totalAmount}}</view>
+    </view>
+    <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower" style='height:{{boxHeight}}px;'>
+        
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell" wx:for="{{performanceList}}" wx:key="{{item.performanceId}}">
+                <view>
+                    <text>{{item.licenseNumber}}</text>
+                    <view>{{item.insuranceCompany}}</view>
+                </view>
+                <view class="rt">       
+                    <text>￥{{item.amount}}</text>
+                    <view>{{item.time}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+        <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+    </scroll-view>
+</view>
+ 

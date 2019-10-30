@@ -1,0 +1,63 @@
+/* pages/myClient/myClient.wxss */
+.weui-cells{
+  margin-top:0;
+}
+.weui-cells:before{
+  border-top:0;
+}
+.weui-cell{
+    display: block;
+}
+.weui-cell image{
+  width:34rpx;
+  height:34rpx;
+  margin-right:30rpx;
+}
+.weui-cell .commonItem:last-child>image{
+  height:26rpx;
+  width:34rpx;
+  margin-top:4rpx;
+}
+.weui-cell>view{
+  display: flex;
+  flex-direction: row;
+}
+.weui-cell>.topItem{
+  justify-content: space-between;
+  color:#333;
+  font-size:34rpx;
+  height:40rpx;
+  line-height:40rpx;
+  margin-top:15rpx;
+  margin-bottom:30rpx;
+}
+.weui-cell>.topItem>.lf{
+  font-size:40rpx;
+}
+.weui-cell>.labelItem{
+  margin-bottom:30rpx;
+}
+.weui-cell>.labelItem>view{
+  height:36rpx;
+  line-height:36rpx;
+  color:#fff;
+  border-radius:18rpx;
+  font-size:26rpx;
+  padding:0 20rpx;
+  background:#1bbc60;
+  margin-right:30rpx
+}
+.weui-cell>.labelItem>.carOwner{
+  background:#f1ce20;
+}
+.weui-cell>.commonItem{
+  font-size:34rpx;
+  color:#333;
+  line-height:34rpx;
+  height:34rpx;
+  margin-bottom:30rpx;
+}
+.weui-cell>.commonItem:last-child{
+  margin-bottom:15rpx;
+}
+

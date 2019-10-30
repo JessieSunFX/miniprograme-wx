@@ -1,0 +1,70 @@
+<!--pages/basicVehicleInfo/basicVehicleInfo.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">投保城市</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" value="{{insuranceCity}}" disabled/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">车牌号</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入车牌" maxlength='7' value="{{licenseNumber}}" bindinput='licenseNumberChange' bindblur='licenseNumberBlur'/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">车主姓名</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请输入车主姓名" maxlength='6' value="{{carOwnerName}}" bindinput='carOwnerNameChange' bindblur='carOwnerNameBlur'/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">手机号</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" type="number" placeholder="请输入手机号" maxlength="11" value='{{phoneNumber}}' bindinput='phoneNumberChange' bindblur='phoneNumberBlur'/>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title" id="changedCarSwitch">
+            <view class="weui-cell weui-cell_switch">
+                <view class="weui-cell__bd">过户车</view>
+                <view class="weui-cell__ft" >
+                    <switch checked="{{isTransferCar}}" bindchange="switchChangedCar"/>
+                </view>
+            </view>
+        </view> 
+        <view class="weui-cell weui-cell_input" hidden='{{!isTransferCar}}'>
+            <view class="weui-cell__hd">
+                <view class="weui-label">过户日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{transferDate}}" bindchange="bindDateChange" >
+                    <view class="{{transferDate?'weui-input':'weui-input datePickerPlaceholder'}}">{{transferDate?transferDate:'请选择日期'}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <checkbox-group bindchange="bindAgreeChange">
+        <label class="weui-agree" for="weuiAgree">
+            <view class="weui-agree__text">
+                <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isOtherInsurance}}" />
+                <view class="weui-agree__checkbox-icon">
+                    <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isOtherInsurance}}"></icon>
+                </view>
+                投保人非车主本人或公户车辆
+            </view>
+        </label>
+    </checkbox-group>
+    <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap="showTopTips">下一步</button>
+    </view>
+</view>
+

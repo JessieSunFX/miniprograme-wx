@@ -1,0 +1,44 @@
+<!--pages/backIdentityCard/backIdentityCard.wxml-->
+<view class="view" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">签发机关</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="签发机关" maxlength="20" value="{{authority}}" bindinput='authorityChange' bindblur='authorityBlur'/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">起始日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{startDate}}"  bindchange="startDateChange">
+                    <view class="{{startDate?'weui-input':'weui-input datePickerPlaceholder'}}">{{startDate?startDate:'起始日期'}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title" id="changedSwitch">
+            <view class="weui-cell weui-cell_switch">
+                <view class="weui-cell__bd">长期有效</view>
+                <view class="weui-cell__ft" >
+                    <switch checked="{{isLongTerm}}" bindchange="switchChange" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input" hidden="{{isLongTerm}}">
+            <view class="weui-cell__hd">
+                <view class="weui-label">终止日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" value="{{terminationDate}}"  bindchange="terminationDateChange">
+                    <view class="{{terminationDate?'weui-input':'weui-input datePickerPlaceholder'}}">{{terminationDate?terminationDate:'终止日期'}}</view>
+                </picker>
+            </view>
+        </view> 
+    </view>
+    <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap="showTopTips">下一步</button>
+    </view>   
+</view>

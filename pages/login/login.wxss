@@ -1,0 +1,70 @@
+/* pages/login/login.wxss */
+page{
+  background:#fff;
+}
+.page{
+  padding:100rpx 45rpx 0;
+}
+.page>text{
+  font-size:60rpx;
+  color:#333;
+}
+.phoneInput,.codeInput{
+  margin-top:100rpx;
+  width:100%;
+  position:relative;
+  padding-bottom:28rpx;
+}
+.phoneInput:after,.codeInput:after{
+  border-bottom:1rpx solid #d9d9d9;
+  content:" ";
+  position:absolute;
+  left:0;
+  right:0;
+  height:1px;
+  color:#d9d9d9;
+  bottom:0;
+}
+.phoneInput>input{
+  width:100%;
+  box-sizing:border-box;
+  text-align:left;
+  height:60rpx;
+  line-height:60rpx;
+  font-size:34rpx;
+  /* border:1rpx solid #808080;
+  border-radius:10rpx; */
+}
+.codeInput{
+  margin-top:46rpx;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom:80rpx;
+}
+.codeInput>input{
+  width:70%;
+  box-sizing:border-box;
+  /* border:1rpx solid #808080;
+  border-radius:10rpx; */
+  text-align:left;
+  height:60rpx;
+  line-height:60rpx;
+  font-size:34rpx;
+}
+.codeInput>view{
+  width:30%;
+  height:60rpx;
+  line-height:60rpx;
+  /* border:1rpx solid #808080;
+  border-radius:10rpx; */
+  box-sizing:border-box;
+  color:#1bbc60;
+  white-space:nowrap;
+  font-size:34rpx;
+  text-align:center;
+  border-left:1rpx solid #d9d9d9;
+}
+.weui-btn-area{
+  margin:0;
+}

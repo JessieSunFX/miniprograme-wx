@@ -1,0 +1,11 @@
+/* pages/basicVehicleInfo/basicVehicleInfo.wxss */
+#changedCarSwitch:after{
+  height:0;
+  border-bottom:none;
+}
+#changedCarSwitch:before{
+  left:15px;
+}
+.datePickerPlaceholder{
+  color:#808080;
+}

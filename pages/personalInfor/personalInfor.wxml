@@ -1,0 +1,58 @@
+<!--pages/personalInfor/personalInfor.wxml-->
+<view class="page">
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">用户名</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" value="{{username}}" disabled/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">邮箱</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="电子邮箱" value="{{emailAddress}}"  maxlength='30'  bindblur="bindEmailAddrBlur" />
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">地址</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+                  <view class="picker">
+                      <view class="weui-input" wx:if="{{region.length>0}}">{{region[0]}} {{region[1]}} {{region[2]}}</view>
+                      <view class="weui-input datePickerPlaceholder" wx:if="{{region.length==0}}">省份 城市</view>
+                  </view>
+              </picker>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">街道</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="街道名称" maxlength='30' value="{{streetName}}" bindblur="bindStreetNameBlur"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">身份证</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" type="idcard" placeholder="身份证号码" maxlength='18' value="{{identityCard}}" bindblur="bindIdentityCardBlur"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">店招</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="车险小助手" maxlength='16' value="{{signage}}" bindblur="bindSignageBlur"/>
+            </view>
+        </view>  
+    </view> 
+</view>

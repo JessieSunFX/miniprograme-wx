@@ -1,0 +1,36 @@
+<!--pages/myDiamond/myDiamond.wxml-->
+<view class="page">
+    <view class="topBox">
+        <image src="../../img/myDiamondBg.png" background-size="cover"></image>
+        <view class="totalInfo">
+            <view class="lf">
+                <text>钻石余额</text>
+                <view><text>{{diamondBalance}}</text>钻</view>
+            </view>
+            <view class="rt" bindtap='gotoExchange'>去兑换</view>
+        </view>
+        <view class="incomeInfo">
+            <view>收入:{{diamondIncome}}</view>
+            <view>支出:{{diamondExpenses}}</view>
+        </view>
+    </view>
+    <view class="mainBox">
+        <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower" style='height:{{boxHeight}}px;'>       
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell" wx:for="{{diamondList}}" wx:key="{{item.recordId}}">
+                    <view class="lf">
+                        <text>{{item.date}}</text>
+                        <view>{{item.time}}</view>
+                    </view>
+                    <view class="rt">       
+                        <text class="{{item.recoedType=='0'?'':'redText'}}">{{item.recoedType=='0'?'+':'-'}}{{item.amount}}</text>
+                        <view wx:if="{{item.recoedType=='1'}}">钻石兑换</view>
+                        <view wx:if="{{item.recoedType=='0'}}">{{item.insuranceCompany}},{{item.detailType}},{{item.licenseNumber}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+            <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+        </scroll-view>
+    </view>
+</view>

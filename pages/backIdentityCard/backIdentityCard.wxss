@@ -1,0 +1,8 @@
+/* pages/backIdentityCard/backIdentityCard.wxss */
+#changedSwitch:after{
+  height:0;
+  border-bottom:none;
+}
+#changedSwitch:before{
+  left:15px;
+}

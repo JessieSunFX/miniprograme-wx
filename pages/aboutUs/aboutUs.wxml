@@ -1,0 +1,17 @@
+<!--pages/aboutUs/aboutUs.wxml-->
+<view class="page">
+    <view class="content">
+        <image src="../../img/aboutLogo.png" background-size="cover"></image>
+        <view class="logo">车险小助手</view>
+        <view class="information">
+            <text>版本:V1.0</text>
+            <view>客服:400-123-4567</view>
+        </view>
+    </view>
+    <view class="weui-footer weui-footer_fixed-bottom">
+        <view class="weui-footer__text">
+            @2017-2019 zhiqixin.com版权所有
+        </view>
+        <view class="weui-footer__text">北京知企信科技有限公司</view>
+    </view>
+</view>

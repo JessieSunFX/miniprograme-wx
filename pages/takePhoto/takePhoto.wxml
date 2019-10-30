@@ -1,0 +1,15 @@
+<!--pages/drivingLicenseFront/drivingLicenseFront.wxml-->
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <text>请拍摄{{topTitle}}，并录入信息</text>
+    <!-- camera.wxml -->
+    <view class="cameraContainer" bindtap="uploadPhoto">
+        <image mode="aspectFit" src="{{src}}" ></image>
+        <view hidden='{{hideCamera}}'>
+            <view>
+                <image src="../../img/takePhotoIcon.png" background-size="100% 100%"></image>
+            </view>
+            <text>拍摄{{detailTitle}}</text>
+        </view>
+    </view>
+    <view class="hint" hidden='{{hideHint}}'>*为提高识别率，请横向重新拍摄</view>
+</view>

@@ -1,0 +1,91 @@
+/* pages/myDiamond/myDiamond.wxss */
+.topBox{
+  color:#fff;
+  position:relative;
+  width:100%;
+}
+.topBox>image{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+.topBox>view{
+    width:100%;
+    box-sizing:border-box;
+    padding:0 30rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.topBox>.totalInfo>.lf{
+    font-size:28rpx;
+    padding:30rpx 0;
+}
+.topBox>.totalInfo>.lf>text{
+    display:inline-block;
+    height:28rpx;
+    line-height: 28rpx;
+    margin-bottom:20rpx;
+}
+.topBox>.totalInfo>.lf>view>text{
+    font-size:80rpx;
+    display:inline-block;
+    height:80rpx;
+    line-height: 80rpx;
+}
+.topBox>.totalInfo>.rt{
+    width:120rpx;
+    height:60rpx;
+    line-height:60rpx;
+    text-align:center;
+    background:#fff;
+    color:#333;
+    font-size:26rpx;
+    border-radius:10rpx;
+    margin-top:30rpx;
+}
+.topBox>.incomeInfo{
+    background:rgba(255,255,255,0.1);
+}
+.topBox>.incomeInfo>view{
+    height:60rpx;
+    line-height:60rpx;
+    text-align:center;
+    font-size:26rpx;
+    color:#fff;
+    margin:14rpx 0;
+    width:50%;
+}
+.topBox>.incomeInfo>view:first-child{
+    border-right:1rpx solid #fff;
+}
+.mainBox .weui-cell{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size:26rpx;
+    color:#a9a9a9;
+}
+.mainBox .weui-cell>view>text{
+    color:#000;
+    display:block;
+    margin-bottom:20rpx;
+}
+.mainBox .weui-cell>.lf{
+    width:30%;
+}
+.mainBox .weui-cell>.rt{
+    width:70%;
+    text-align:right;
+}
+.mainBox .weui-cell>.rt>text{
+  font-size:34rpx;
+}
+.mainBox .weui-cell>.rt>.redText{
+  color:#e22;
+}

@@ -1,0 +1,62 @@
+/* pages/drivingLicenseFront/drivingLicenseFront.wxss */
+.page{
+  text-align:center;
+}
+.page>text{
+  display:block;
+  font-size:34rpx;
+  color:#a9a9a9;
+  margin-top:40rpx;
+}
+.cameraContainer{
+  width:680rpx;
+  margin:40rpx auto;
+  height:426rpx;
+  position:relative;
+  border-radius:10rpx;
+  border:1rpx dashed #d9d9d9;
+  padding:10rpx;
+  box-sizing:border-box;
+}
+.cameraContainer>image{
+  width:100%;
+  height:100%;
+}
+.cameraContainer>view{
+  width:auto;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+.cameraContainer>view>view{
+  width:154rpx;
+  height:154rpx;
+  background:rgba(0,0,0,0.5);
+  border-radius:77rpx;
+  margin:0 auto;
+}
+.cameraContainer>view>view>image{
+  width:80rpx;
+  height:64rpx;
+  margin:45rpx auto;
+}
+.cameraContainer>view>text{
+  display:block;
+  font-size:34rpx;
+  color:#333;
+  margin-top:24rpx;
+}
+.page>.hint{
+  font-size:26rpx;
+  color:#e22;
+  text-align:left;
+  padding-left:35rpx;
+}
+/* .cameraContainer>camera{
+  width:100%;
+  height:100%;
+} */
+/* .page>button{
+  margin:100rpx 30rpx;
+} */
