@@ -59,7 +59,14 @@ App({
     })
   },
   onLaunch: function () {
-
+    // 改写wx.request(Monkey Patch 猴子补丁)--不提倡
+    // const originRequest = wx.request;
+    // wx.request = (...args) => {
+    //   return new Promise(resolve => {
+    //     resolve();
+    //     originRequest.call(wx, ...args);
+    //   })
+    // };
   },
   globalData: {
     domainName: "http://47.95.113.208:8181/" //全局配置域名(测试)
