@@ -2,6 +2,29 @@
 //获取应用实例
 const app = getApp()
 
+var api = new Proxy(
+  wx,
+  {
+    get(target, key){
+      if (typeof target[key] === 'function') {
+        return function (params, ...args) {
+          return new Promise((resolve, reject) => {
+            target[key]({
+              ...params,
+              success: function (data) {
+                params.success && params.success(data);
+              }
+            }, ...args);
+          });
+        }
+      }
+    }
+  }
+);
+// var prom = api.request();
+// prom.then
+// wx['request']()
+
 Page({
   data: {
     isLoged:false,
