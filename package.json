@@ -1,0 +1,24 @@
+{
+  "name": "insurancetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "miniprogram-automator": "^0.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test1": "node simulator.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JessieSunFX/miniprograme-wx.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessieSunFX/miniprograme-wx/issues"
+  },
+  "homepage": "https://github.com/JessieSunFX/miniprograme-wx#readme"
+}

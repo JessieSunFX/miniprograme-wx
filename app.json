@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/diamondExchange/diamondExchange",  
+    "pages/diamondExchange/diamondExchange",
     "pages/confirmPolicyInfor/confirmPolicyInfor",
-    "pages/vehicleInfoSupplement/vehicleInfoSupplement",  
+    "pages/vehicleInfoSupplement/vehicleInfoSupplement",
     "pages/insuranceDetails/insuranceDetails",
     "pages/backIdentityCard/backIdentityCard",
     "pages/frontIdentityCard/frontIdentityCard",
@@ -18,7 +18,6 @@
     "pages/bankCardInfor/bankCardInfor",
     "pages/faq/faq",
     "pages/aboutUs/aboutUs",
-    
     "pages/myDiamond/myDiamond",
     "pages/myPerformance/myPerformance",
     "pages/basicVehicleInfo/basicVehicleInfo",
@@ -33,5 +32,6 @@
   "networkTimeout": {
     "request": 10000,
     "uploadFile": 10000
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
