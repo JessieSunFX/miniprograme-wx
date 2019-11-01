@@ -6,13 +6,14 @@ var api = new Proxy(
   wx,
   {
     get(target, key){
-      if (typeof target[key] === 'function') {
-        return function (params, ...args) {
+      if (typeof target[key] === 'function' && !/Sync$/.test(key)) {
+        return function (params = {}, ...args) {
           return new Promise((resolve, reject) => {
             target[key]({
               ...params,
               success: function (data) {
                 params.success && params.success(data);
+                resolve(data);
               }
             }, ...args);
           });
@@ -112,5 +113,34 @@ Page({
     }else{
       this.getSignage();
     }
+
+
+    // no.17
+    api.request({
+      url:"http://yuanxin.taobao.com:9000/list",
+    })
+    .then(({data}) => {
+      console.log('ajax-res:::',data.data);
+      this.setData({
+        list:data.data
+      })
+    });
+
+    api.getSystemInfo()
+        .then(res => {
+          console.log('res::',res);
+        });
+    //请求系统信息
+    api.getSystemInfo()
+        //发送请求
+        .then(infos => api.request({
+          url:"http://yuanxin.taobao.com:9000/list",
+        }))
+        .then(({data}) => {
+          console.log('ajax-res:::',data.data);
+          this.setData({
+            list:data.data
+          })
+        })
   }
 })
