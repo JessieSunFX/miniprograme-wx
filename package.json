@@ -6,7 +6,14 @@
   "dependencies": {
     "miniprogram-automator": "^0.8.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "husky": "^3.0.9"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test1": "node simulator.js"
